@@ -1,4 +1,4 @@
-hereimport discord
+import discord
 from discord.ext import commands
 from discord import app_commands
 import yt_dlp
@@ -17,7 +17,7 @@ if not discord.opus.is_loaded():
 
 # ─── إعدادات YT-DLP ────────────────────────────────────────────────────────────
 YTDL_OPTIONS = {
-    "format": "bestaudio[ext=webm]/bestaudio[ext=m4a]/bestaudio/best",
+    "format": "bestaudio/best",
     "noplaylist": True,
     "quiet": True,
     "no_warnings": True,
@@ -27,17 +27,8 @@ YTDL_OPTIONS = {
     "ignoreerrors": True,
     "extractor_args": {
         "youtube": {
-            "player_client": ["android_music", "android", "web"],
-            "player_skip": ["webpage", "configs"],
+            "player_client": ["ios", "android_music"],
         }
-    },
-    "http_headers": {
-        "User-Agent": (
-            "Mozilla/5.0 (Linux; Android 13; Pixel 7) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/116.0.0.0 Mobile Safari/537.36"
-        ),
-        "Accept-Language": "en-US,en;q=0.9",
     },
     "socket_timeout": 30,
 }
